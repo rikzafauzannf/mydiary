@@ -83,7 +83,7 @@ export default function Home() {
         {posts.map((post) => (
           <div key={post.id} className="card w-full bg-slate-800/50">
             <div className="card-body">
-              <h1 className="text-xl font-semibold text-center">{post.title}</h1>
+              <h1 className="text-xl font-semibold text-white">{post.title}</h1>
               <div className="flex flex-row gap-1">
                 <button
                   onClick={() => handleDeletePost(post.id)}
