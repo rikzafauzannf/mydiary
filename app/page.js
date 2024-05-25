@@ -56,7 +56,9 @@ export default function Home() {
   return (
     <>
       {/* FORM */}
-      <h1 className="text-4xl font-extrabold text-white">GOBDiary</h1>
+      <h1 className="text-4xl font-extrabold text-white">
+        GOBS'<span className="text-primary">Diary</span>
+      </h1>
       <p className="text-based font-medium text-white">
         Tempat ngebacot untuk saling beradu nasib, karena kebanyakan orang tidak
         bisa meluapkan isi pikiran dengan baik dan disinilah tempat dimana lu
@@ -64,7 +66,7 @@ export default function Home() {
       </p>
 
       <Disclosure>
-        <DisclosureButton className="group flex items-center gap-2 btn btn-md btn-error w-full">
+        <DisclosureButton className="group flex items-center gap-2 btn btn-md btn-error w-full shadow-lg">
           Mulai Ngebacot
           {/* <ChevronDownIcon className="w-5 group-data-[open]:rotate-180" /> */}
         </DisclosureButton>
