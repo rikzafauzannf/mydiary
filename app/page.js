@@ -6,7 +6,8 @@ import Link from "next/link";
 // Load react-quill dynamically to prevent SSR issues
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import "react-quill/dist/quill.snow.css"; // import styles
-
+import { FaFaceAngry } from "react-icons/fa6";
+import { GiAngryEyes } from "react-icons/gi";
 import {
   Disclosure,
   DisclosureButton,
@@ -56,7 +57,8 @@ export default function Home() {
   return (
     <>
       {/* FORM */}
-      <h1 className="text-4xl font-extrabold text-white">
+      <h1 className="text-4xl font-extrabold text-white flex flex-row gap-1">
+        <FaFaceAngry />
         GOBS'<span className="text-primary">Diary</span>
       </h1>
       <p className="text-based font-medium text-white">
@@ -68,6 +70,7 @@ export default function Home() {
       <Disclosure>
         <DisclosureButton className="group flex items-center gap-2 btn btn-md btn-error w-full shadow-lg">
           Mulai Ngebacot
+          <GiAngryEyes />
           {/* <ChevronDownIcon className="w-5 group-data-[open]:rotate-180" /> */}
         </DisclosureButton>
         <DisclosurePanel>
