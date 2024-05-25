@@ -50,8 +50,8 @@ export default function Home() {
   return (
     <>
       {/* FORM */}
-      <h1 className="text-4xl font-extrabold">GOBDiary</h1>
-      <p className="text-based font-semibold">
+      <h1 className="text-4xl font-extrabold text-white">GOBDiary</h1>
+      <p className="text-based font-semibold text-white">
         Tempat ngebacot untuk saling beradu nasib
       </p>
       <div className="gap-2 grid grid-cols-1 w-full">
