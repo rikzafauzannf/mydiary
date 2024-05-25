@@ -7,6 +7,12 @@ import Link from "next/link";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import "react-quill/dist/quill.snow.css"; // import styles
 
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from "@headlessui/react";
+
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const [newTitle, setNewTitle] = useState("");
@@ -51,35 +57,46 @@ export default function Home() {
     <>
       {/* FORM */}
       <h1 className="text-4xl font-extrabold text-white">GOBDiary</h1>
-      <p className="text-based font-semibold text-white">
-        Tempat ngebacot untuk saling beradu nasib
+      <p className="text-based font-medium text-white">
+        Tempat ngebacot untuk saling beradu nasib, karena kebanyakan orang tidak
+        bisa meluapkan isi pikiran dengan baik dan disinilah tempat dimana lu
+        bisa menyampaikan segala yang lu rasain dengan bebas
       </p>
-      <div className="gap-2 grid grid-cols-1 w-full">
-        <input
-          type="text"
-          value={newTitle}
-          onChange={(e) => setNewTitle(e.target.value)}
-          placeholder="Post Title"
-          className="input input-bordered w-full text-white shadow-lg"
-        />
-        <ReactQuill
-          value={newContent}
-          onChange={setNewContent}
-          className="w-full min-h-[76vh] mb-20 text-white bg-slate-950 rounded-md shadow-lg"
-        />
-        {/* <textarea
+
+      <Disclosure>
+        <DisclosureButton className="group flex items-center gap-2 btn btn-md btn-error w-full">
+          Mulai Ngebacot
+          {/* <ChevronDownIcon className="w-5 group-data-[open]:rotate-180" /> */}
+        </DisclosureButton>
+        <DisclosurePanel>
+          <div className="gap-2 grid grid-cols-1 w-full">
+            <input
+              type="text"
+              value={newTitle}
+              onChange={(e) => setNewTitle(e.target.value)}
+              placeholder="Post Title"
+              className="input input-bordered w-full text-white shadow-lg"
+            />
+            <ReactQuill
+              value={newContent}
+              onChange={setNewContent}
+              className="w-full min-h-[76vh] mb-20 text-white bg-slate-950 rounded-md shadow-lg"
+            />
+            {/* <textarea
           value={newContent}
           onChange={(e) => setNewContent(e.target.value)}
           placeholder="Post Content"
           className="input input-bordered w-full h-64"
         /> */}
-      </div>
-      <button
-        className="btn btn-md btn-primary shadow-lg"
-        onClick={handleAddPost}
-      >
-        Add Diary
-      </button>
+          </div>
+          <button
+            className="btn btn-md btn-primary shadow-lg"
+            onClick={handleAddPost}
+          >
+            Add Diary
+          </button>
+        </DisclosurePanel>
+      </Disclosure>
 
       {/* content */}
       <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4">
