@@ -53,7 +53,7 @@ const PostDetails = ({ params }) => {
               type="text"
               value={editedTitle}
               onChange={(e) => setEditedTitle(e.target.value)}
-              className="input input-bordered w-full"
+              className="input input-bordered w-full text-white"
             />
             <ReactQuill
               value={editedContent}
