@@ -58,7 +58,7 @@ const PostDetails = ({ params }) => {
             <ReactQuill
               value={editedContent}
               onChange={setEditedContent}
-              className="input input-bordered w-full h-auto text-white"
+              className="w-full min-h-[76vh] mb-20 text-white bg-slate-950 rounded-md"
             />
             <button
               onClick={handleUpdatePost}

@@ -60,12 +60,12 @@ export default function Home() {
           value={newTitle}
           onChange={(e) => setNewTitle(e.target.value)}
           placeholder="Post Title"
-          className="input input-bordered w-full"
+          className="input input-bordered w-full text-white"
         />
         <ReactQuill
           value={newContent}
           onChange={setNewContent}
-          className="w-full min-h-[76vh] mb-20 text-white bg-slate-950"
+          className="w-full min-h-[76vh] mb-20 text-white bg-slate-950 rounded-md"
         />
         {/* <textarea
           value={newContent}
@@ -83,7 +83,7 @@ export default function Home() {
         {posts.map((post) => (
           <div key={post.id} className="card w-full bg-slate-800/50">
             <div className="card-body">
-              <h1 className="text-xl font-semibold">{post.title}</h1>
+              <h1 className="text-xl font-semibold text-center">{post.title}</h1>
               <div className="flex flex-row gap-1">
                 <button
                   onClick={() => handleDeletePost(post.id)}
