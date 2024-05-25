@@ -60,12 +60,12 @@ export default function Home() {
           value={newTitle}
           onChange={(e) => setNewTitle(e.target.value)}
           placeholder="Post Title"
-          className="input input-bordered w-full text-white"
+          className="input input-bordered w-full text-white shadow-lg"
         />
         <ReactQuill
           value={newContent}
           onChange={setNewContent}
-          className="w-full min-h-[76vh] mb-20 text-white bg-slate-950 rounded-md"
+          className="w-full min-h-[76vh] mb-20 text-white bg-slate-950 rounded-md shadow-lg"
         />
         {/* <textarea
           value={newContent}
@@ -74,27 +74,30 @@ export default function Home() {
           className="input input-bordered w-full h-64"
         /> */}
       </div>
-      <button className="btn btn-md btn-primary " onClick={handleAddPost}>
+      <button
+        className="btn btn-md btn-primary shadow-lg"
+        onClick={handleAddPost}
+      >
         Add Diary
       </button>
 
       {/* content */}
       <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4">
         {posts.map((post) => (
-          <div key={post.id} className="card w-full bg-slate-800/50">
+          <div key={post.id} className="card w-full bg-slate-800/50 shadow-lg">
             <div className="card-body">
               <h1 className="text-xl font-semibold text-white">{post.title}</h1>
               <div className="flex flex-row gap-1">
                 <button
                   onClick={() => handleDeletePost(post.id)}
-                  className="btn btn-sm btn-error"
+                  className="btn btn-sm btn-error shadow-lg"
                   aria-label={`Delete ${post.title}`}
                 >
                   Delete
                 </button>
                 <Link
                   href={`/post/${post.id}`}
-                  className="btn btn-sm btn-success flex-1"
+                  className="btn btn-sm btn-success flex-1 shadow-lg"
                 >
                   Baca
                 </Link>

@@ -53,22 +53,22 @@ const PostDetails = ({ params }) => {
               type="text"
               value={editedTitle}
               onChange={(e) => setEditedTitle(e.target.value)}
-              className="input input-bordered w-full text-white"
+              className="input input-bordered w-full text-white shadow-lg"
             />
             <ReactQuill
               value={editedContent}
               onChange={setEditedContent}
-              className="w-full min-h-[76vh] mb-20 text-white bg-slate-950 rounded-md"
+              className="w-full min-h-[76vh] mb-20 text-white bg-slate-950 rounded-md shadow-lg"
             />
             <button
               onClick={handleUpdatePost}
-              className="btn btn-sm btn-success"
+              className="btn btn-md btn-success shadow-lg w-full"
             >
               Save
             </button>
           </div>
         ) : (
-          <div className="card bg-gradient-to-tr from-slate-400/50">
+          <div className="card bg-gradient-to-tr from-slate-400/50 shadow-lg">
             <div className="card-body">
               <h1 className="text-2xl font-semibold">{post.title}</h1>
               <hr />
